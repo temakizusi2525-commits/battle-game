@@ -4,9 +4,47 @@
   <meta charset="UTF-8">
   <title>Battle Game</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+    }
+    .card {
+      background: #222;
+      border-radius: 16px;
+      padding: 20px;
+      width: 280px;
+      margin: 40px auto;
+      box-shadow: 0 0 20px red;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
+
   <h1>🔥 Battle Game 🔥</h1>
-  <p>ついにWebで動いた！</p>
+
+  <div class="card">
+    <h2>戦士カード</h2>
+    <p>HP: <span id="hp">100</span></p>
+    <button onclick="attack()">攻撃</button>
+  </div>
+
+  <script>
+    let hp = 100;
+    function attack() {
+      hp -= 10;
+      if (hp < 0) hp = 0;
+      document.getElementById("hp").textContent = hp;
+    }
+  </script>
+
 </body>
 </html>
+
